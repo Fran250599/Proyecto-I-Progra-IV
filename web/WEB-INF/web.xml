@@ -9,12 +9,12 @@
         <url-pattern>/login</url-pattern>
     </servlet-mapping>
     <servlet>
-        <servlet-name>successful</servlet-name>
+        <servlet-name>home</servlet-name>
         <servlet-class>com.login.Home</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>successful</servlet-name>
-        <url-pattern>/Successful</url-pattern>
+        <servlet-name>home</servlet-name>
+        <url-pattern>/home</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
