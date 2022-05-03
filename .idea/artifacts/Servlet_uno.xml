@@ -1,0 +1,6 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="Servlet-uno">
+    <output-path>$PROJECT_DIR$/out/artifacts/Servlet_uno</output-path>
+    <root id="root" />
+  </artifact>
+</component>
