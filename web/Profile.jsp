@@ -1,13 +1,20 @@
+<%-- 
+    Document   : Profile
+    Created on : 3 may 2022, 11:49:12
+    Author     : XPC
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
+<html>
+    <head>
+        <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/Profile.css">
     <title>Información personal</title>
-</head>
-<body>
+    </head>
+    <body>
     <div class="container">
 
         <div class="forms-container">

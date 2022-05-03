@@ -15,7 +15,7 @@ public class Profile extends HttpServlet{
         
         out.print("<html><head><link rel=\"stylesheet\" href=\"Profile.css\"></head>");
         
-        resp.sendRedirect("/Servlet-uno/Profile.html");
+        resp.sendRedirect("/Servlet-uno/Profile.jsp");
         
         out.print("</html>");
       

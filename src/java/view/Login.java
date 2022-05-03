@@ -16,7 +16,7 @@ public class Login extends HttpServlet{
         
         out.print("<html><head><link rel=\"stylesheet\" href=\"SignIn.css\"></head>");
         
-        resp.sendRedirect("/Servlet-uno/index.html");
+        resp.sendRedirect("/Servlet-uno/index.jsp");
         
         out.print("</html>");
       

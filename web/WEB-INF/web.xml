@@ -32,6 +32,14 @@
         <servlet-name>homePatient</servlet-name>
         <url-pattern>/homePatient</url-pattern>
     </servlet-mapping>
+        <servlet>
+        <servlet-name>SignUp</servlet-name>
+        <servlet-class>view.SignUp</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SignUp</servlet-name>
+        <url-pattern>/SignUp</url-pattern>
+    </servlet-mapping>
     <session-config>
         <session-timeout>
             30

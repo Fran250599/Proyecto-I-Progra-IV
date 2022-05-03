@@ -13,7 +13,7 @@ public class HomePatient extends HttpServlet {
 
         out.print("<html><head><link rel=\"stylesheet\" href=\"Home.css\"></head>");
 
-        resp.sendRedirect("/Servlet-uno/HomePatient.html");
+        resp.sendRedirect("/Servlet-uno/HomePatient.jsp");
 
         out.print("</html>");  
     }

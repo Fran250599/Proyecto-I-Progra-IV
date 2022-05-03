@@ -16,7 +16,7 @@ public class HomeDoctor extends HttpServlet {
 
         out.print("<html><head><link rel=\"stylesheet\" href=\"Home.css\"></head>");
 
-        resp.sendRedirect("/Servlet-uno/HomeDoctor.html");
+        resp.sendRedirect("/Servlet-uno/HomeDoctor.jsp");
 
         out.print("</html>");
 

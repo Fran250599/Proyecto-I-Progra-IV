@@ -1,21 +1,23 @@
+
 package model.dao;
 
-import java.sql.SQLException;
-import java.sql.PreparedStatement;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 
-public class DAOPaciente {
 
-    public DAOPaciente(Connection con) {
+public class DAODoctor {
+
+    public DAODoctor(Connection con) {
         loadDatabase(con);
     }
-
+    
     public static Boolean loadDatabase(Connection con) {
-        try {
-            PreparedStatement stmtPatients;
-
-             stmtPatients = con.prepareStatement("CREATE TABLE proyecto.patients(idDoctors VARCHAR(45), name varchar (45), password VARCHAR(45))");
-            stmtPatients.executeUpdate();
+        try {           
+            PreparedStatement stmtDoctors;
+            
+            stmtDoctors = con.prepareStatement("CREATE TABLE proyecto.doctors(idDoctors VARCHAR(45), name varchar (45), password VARCHAR(45))");
+            stmtDoctors.executeUpdate();
 
             return true;
 
@@ -25,12 +27,11 @@ public class DAOPaciente {
             return false;
         }
     }
-
     
-    
-    public void addPatient(Connection con, String id, String name, String password) {
+    public void addDoctor(Connection con, String id, String name, String password) {
         try {
-            PreparedStatement stmt = con.prepareStatement("INSERT INTO proyecto.patients VALUES ('" +id +"','" + name +"','" + password + "');");
+            PreparedStatement stmt = con.prepareStatement("INSERT INTO proyecto.doctors VALUES ('" +id +"','" + name +"','" + password + "');");
+
             int status = stmt.executeUpdate();
             if (status != 0) {
                 System.out.println("Successfully added");
@@ -43,15 +44,16 @@ public class DAOPaciente {
             System.out.println("VendorError: " + ex.getErrorCode());
         }
     }
-
-    public static DAOPaciente getInstance(Connection con) {
+    
+    
+    
+    
+    public static DAODoctor getInstance(Connection con) {
         if (instance == null) {
-            return new DAOPaciente(con);
+            return new DAODoctor(con);
         }
         return instance;
     }
 
-    private static DAOPaciente instance;
-
-   
+    private static DAODoctor instance;
 }
