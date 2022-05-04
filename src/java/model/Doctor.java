@@ -10,6 +10,13 @@ public class Doctor {
         this.password = password;
     }
 
+    public Doctor() {
+        this.id = "";
+        this.name ="";
+        this.password= "";
+    
+    }
+
     public String getId() {
         return id;
     }

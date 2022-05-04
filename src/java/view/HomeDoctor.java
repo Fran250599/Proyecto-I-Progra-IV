@@ -1,11 +1,14 @@
 package view;
 
-import model.dao.DAOPaciente;
+import controller.ControladorDoctor;
+import controller.DatabaseConnection;
 import jakarta.servlet.http.*;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.Connection;
-import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import model.Doctor;
 
 public class HomeDoctor extends HttpServlet {
 
@@ -20,27 +23,20 @@ public class HomeDoctor extends HttpServlet {
 
         out.print("</html>");
 
-        LoadDriver();
-    }
 
-    void LoadDriver() {
-        try{
-            Class.forName("com.mysql.jdbc.Driver").getDeclaredConstructor().newInstance();
+        DatabaseConnection db = new DatabaseConnection();
 
-        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/", "root", "root");
-        
-         DAOPaciente.getInstance(con);
-         
-         
-         
-        }catch(Exception ex){
-            System.out.print("Unable to connect");
+        if(db.getConnection() != null){
+            
+            ControladorDoctor.getInstance(db.getConnection()).agregarDoctor(new Doctor("soy"," un", "doctor"));
+            
+            
+                ControladorDoctor.getInstance(db.getConnection()).getDoctors();
+            
+            
         }
-        
-       
     }
 
+    
+    
 }
-
-
-/**/
