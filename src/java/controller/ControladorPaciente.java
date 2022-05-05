@@ -36,6 +36,6 @@ public class ControladorPaciente {
     
     
     
-    private Connection con;
+    private final Connection con;
     private static ControladorPaciente instance;
 }

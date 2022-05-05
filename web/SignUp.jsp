@@ -20,27 +20,37 @@
         <div class="forms-container">
            
             <div class="signup-signup">
-                <form action="homeDoctor" class="sign-up-form">
+                <form action="userSelection" class="sign-up-form">
                     <h2 class="title"> Registro </h2>
 
                     <div class="input-field">
                         <i class="fas fa-user"></i>
-                        <input type="text" placeholder="Nombre completo" >
+                        <input type="text" placeholder="Nombre completo" name="nombre" >
                     </div>
 
                     <div class="input-field">
                         <i class="fas fa-user"></i>
-                        <input type="text" placeholder="Identificación" >
+                        <input type="text" placeholder="Identificación" name="id">
                     </div>
 
                     <div class="input-field">
                         <i class="fas fa-lock"></i>
-                        <input type="password" placeholder="Contraseña" >
+                        <input type="password" placeholder="Contraseña" name="password">
                     </div>
 
                     <div class="input-field">
                         <i class="fas fa-lock"></i>
-                        <input type="passwordConfirm" placeholder=" Confirmar contraseña" >
+                        <input type="password" placeholder=" Confirmar contraseña" name="passwordConfirm">
+                    </div>
+                    
+                    <div>
+                        <label for="dog-names">Tipo de usuario:</label>
+                        <select  name="typeOfUser">
+                            <option value="Doctor">Doctor</option>
+                            <option value="Paciente">Paciente</option>
+                            
+                        </select>
+                        
                     </div>
 
                     <div class="link">

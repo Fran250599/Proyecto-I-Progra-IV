@@ -1,4 +1,4 @@
-package view;
+package view.registration;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;

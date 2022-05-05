@@ -31,15 +31,16 @@ public class DAOPaciente {
     public static ArrayList<Paciente> getPacientes(Connection con) throws SQLException{
         Statement stmt = con.createStatement();
         ResultSet result = stmt.executeQuery("SELECT * FROM proyecto.patients");
-        Paciente p = new Paciente();
+        
         
         ArrayList<Paciente> pacientes = new ArrayList<>();
         
         while(result.next()){
-            
-            p.setId(result.getString(1));
-            p.setName(result.getString(2));
-            p.setPassword(result.getString(3));
+            String id = result.getString(1);
+            String name = result.getString(2);
+            String password = result.getString(3);
+        
+            Paciente p = new Paciente(id, name, password);
             
             pacientes.add(p);
         }

@@ -10,10 +10,6 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-/**
- *
- * @author XPC
- */
 public class DatabaseConnection {
     
     public DatabaseConnection(){
@@ -24,6 +20,8 @@ public class DatabaseConnection {
             this.con = DriverManager.getConnection("jdbc:mysql://localhost:3306/", "root", "root");
             
             createTables();
+            
+          
      
         }catch(ClassNotFoundException | IllegalAccessException | IllegalArgumentException | InstantiationException | NoSuchMethodException | SecurityException | InvocationTargetException | SQLException ex){
             System.out.print("Unable to connect");
@@ -32,6 +30,7 @@ public class DatabaseConnection {
     private void createTables() {
         createDoctorsTable();
         createPatientsTable();
+        createUsersTable();
     }
     
     private void createDoctorsTable(){
@@ -74,7 +73,27 @@ public class DatabaseConnection {
         
     }
     
-    
+    private void createUsersTable(){
+        try {                      
+
+            PreparedStatement stmtPatients;
+
+            stmtPatients = con.prepareStatement(
+                    "CREATE TABLE proyecto.users("
+                            + "id VARCHAR(45) NOT NULL, "
+                            + "name varchar (45), "
+                            + "password VARCHAR(45),"
+                            +"PRIMARY KEY (id)" +");");
+            stmtPatients.executeUpdate();
+
+        } catch (SQLException ex) {
+            System.out.print("Unable to connect");
+            System.out.println("SQLException: " + ex.getMessage());
+        }
+        
+        
+        
+    }
     public Connection getConnection(){
         return con;
     }

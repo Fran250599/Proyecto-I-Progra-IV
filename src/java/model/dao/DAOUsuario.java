@@ -1,4 +1,3 @@
-
 package model.dao;
 
 import java.sql.Connection;
@@ -7,16 +6,14 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
-import model.Doctor;
 import model.Usuario;
 
-
-public class DAODoctor {
+public class DAOUsuario {
+  
     
-    public static void addDoctor(Connection con, String id, String name, String password) {
+    public static void addUsuario(Connection con, String id, String name, String password) {
         try {
-            PreparedStatement stmt = con.prepareStatement("INSERT INTO proyecto.doctors (id, name, password) VALUES ('" +id +"','" + name +"','" + password + "');");
-
+            PreparedStatement stmt = con.prepareStatement("INSERT INTO proyecto.users VALUES ('" +id +"','" + name +"','" + password + "');");
             int status = stmt.executeUpdate();
             if (status != 0) {
                 System.out.println("Successfully added");
@@ -30,12 +27,13 @@ public class DAODoctor {
         }
     }
     
-    public static ArrayList<Doctor> getDoctors(Connection con) throws SQLException{
+    
+    public static ArrayList<Usuario> getUsuarios(Connection con) throws SQLException{
         Statement stmt = con.createStatement();
-        ResultSet result = stmt.executeQuery("SELECT * FROM proyecto.doctors");
-
+        ResultSet result = stmt.executeQuery("SELECT * FROM proyecto.patients");
+      
         
-        ArrayList<Doctor> doctors = new ArrayList<>();
+        ArrayList<Usuario> pacientes = new ArrayList<>();
         
         while(result.next()){
             
@@ -43,24 +41,16 @@ public class DAODoctor {
             String name = result.getString(2);
             String password = result.getString(3);
             
-            Doctor d = new Doctor(id, name,password);
+            Usuario u = new Usuario(id,name,password);
             
-            d.setId(id);
-            
-            doctors.add((Doctor) d);
+            pacientes.add(u);
         }
         
         
-        return doctors;
+        return pacientes;
         
     }
-    
-    
-    
-}
 
-
-
-    
 
    
+}

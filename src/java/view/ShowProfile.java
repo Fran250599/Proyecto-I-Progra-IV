@@ -7,7 +7,7 @@ import java.io.PrintWriter;
 
 
 
-public class Profile extends HttpServlet{
+public class ShowProfile extends HttpServlet{
     
     @Override
     public void doGet(HttpServletRequest req, HttpServletResponse resp)throws ServletException, IOException{

@@ -1,6 +1,7 @@
 package view;
 
 import controller.ControladorDoctor;
+import controller.ControladorHospital;
 import controller.ControladorPaciente;
 import controller.DatabaseConnection;
 import jakarta.servlet.http.*;
@@ -13,6 +14,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import model.Doctor;
 import model.Paciente;
+import model.Usuario;
 
 public class Home extends HttpServlet {
 
@@ -25,8 +27,8 @@ public class Home extends HttpServlet {
             DatabaseConnection db = new DatabaseConnection();
             Connection con = db.getConnection();
 
-            doctors = ControladorDoctor.getInstance(con).getDoctors();
-            pacientes = ControladorPaciente.getInstance(con).getPacientes();
+            ArrayList<Doctor> doctors = ControladorHospital.getInstance(con).getDoctores();
+            ArrayList<Paciente> pacientes = ControladorPaciente.getInstance(con).getPacientes();
 
             boolean loginSuccessful = false;
 
@@ -43,9 +45,10 @@ public class Home extends HttpServlet {
 
                                 out.print("</html>");
 
-                                //Usuario actual 
-                                //User = new User<Doctor>();
                                 loginSuccessful = true;
+                                
+                                Usuario doctor = d;
+                                ControladorHospital.getInstance(con).setUsuarioActivo(doctor);
                             }
                         }
                     }
@@ -53,8 +56,12 @@ public class Home extends HttpServlet {
                 }
                 if (!pacientes.isEmpty()) {
                     for (Paciente p : pacientes) {
-                        if (p.getId().equals(req.getParameter("username"))) {
-                            if (p.getPassword().equals(req.getParameter("password"))) {
+                        String username = req.getParameter("username");
+                        String password = req.getParameter("password");
+                        
+                        
+                        if (p.getId().equals(username)) {
+                            if (p.getPassword().equals(password)) {
 
                                 out.print("<html><head><link rel=\"stylesheet\" href=\"Home.css\"></head>");
 
@@ -63,6 +70,12 @@ public class Home extends HttpServlet {
                                 out.print("</html>");
 
                                 loginSuccessful = true;
+                                
+                                Paciente paciente = p;
+                                paciente.setId(username);
+                                paciente.setPassword(password);
+                                
+                                ControladorHospital.getInstance(con).setUsuarioActivo(paciente);
 
                             }
                         }
@@ -81,7 +94,4 @@ public class Home extends HttpServlet {
         }
 
     }
-
-    ArrayList<Doctor> doctors;
-    ArrayList<Paciente> pacientes;
 }

@@ -30,6 +30,6 @@ public class ControladorDoctor {
         return DAODoctor.getDoctors(con);
     }
     
-    private Connection con;
+    private final Connection con;
     private static ControladorDoctor instance;
 }
