@@ -9,12 +9,12 @@
         <url-pattern>/login</url-pattern>
     </servlet-mapping>
     <servlet>
-        <servlet-name>homeDoctor</servlet-name>
-        <servlet-class>view.HomeDoctor</servlet-class>
+        <servlet-name>home</servlet-name>
+        <servlet-class>view.Home</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>homeDoctor</servlet-name>
-        <url-pattern>/homeDoctor</url-pattern>
+        <servlet-name>home</servlet-name>
+        <url-pattern>/home</url-pattern>
     </servlet-mapping>
     <servlet>
         <servlet-name>profile</servlet-name>
@@ -24,14 +24,7 @@
         <servlet-name>profile</servlet-name>
         <url-pattern>/profile</url-pattern>
     </servlet-mapping>
-    <servlet>
-        <servlet-name>homePatient</servlet-name>
-        <servlet-class>view.HomePatient</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>homePatient</servlet-name>
-        <url-pattern>/homePatient</url-pattern>
-    </servlet-mapping>
+
         <servlet>
         <servlet-name>SignUp</servlet-name>
         <servlet-class>view.SignUp</servlet-class>

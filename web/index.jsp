@@ -19,17 +19,17 @@
         <div class="forms-container">
            
             <div class="signin-signin">
-                <form action="homeDoctor" class="sign-in-form">
+                <form action="home" class="sign-in-form">
                     <h2 class="title"> Inicio de sesión </h2>
 
                     <div class="input-field">
                         <i class="fas fa-user"></i>
-                        <input type="text" placeholder="Identificación" >
+                        <input type="text" placeholder="Identificación" name="username" >
                     </div>
 
                     <div class="input-field">
                         <i class="fas fa-lock"></i>
-                        <input type="password" placeholder="Contraseña" >
+                        <input type="password" placeholder="Contraseña" name="password" >
                     </div>
 
                    <input type="submit" class="btn solid" value="Iniciar sesión">

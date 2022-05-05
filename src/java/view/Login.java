@@ -13,7 +13,7 @@ public class Login extends HttpServlet{
     public void doGet(HttpServletRequest req, HttpServletResponse resp)throws ServletException, IOException{
         System.out.println("this is a get method");
         PrintWriter out = resp.getWriter();
-        
+
         out.print("<html><head><link rel=\"stylesheet\" href=\"SignIn.css\"></head>");
         
         resp.sendRedirect("/Servlet-uno/index.jsp");

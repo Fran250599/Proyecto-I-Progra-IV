@@ -23,33 +23,55 @@ public class DatabaseConnection {
 
             this.con = DriverManager.getConnection("jdbc:mysql://localhost:3306/", "root", "root");
             
-            createTables(con);
+            createTables();
      
         }catch(ClassNotFoundException | IllegalAccessException | IllegalArgumentException | InstantiationException | NoSuchMethodException | SecurityException | InvocationTargetException | SQLException ex){
             System.out.print("Unable to connect");
         }
     }
-    private Boolean createTables(Connection con) {
+    private void createTables() {
+        createDoctorsTable();
+        createPatientsTable();
+    }
+    
+    private void createDoctorsTable(){
         try {           
+            
             PreparedStatement stmtDoctors;
             
             stmtDoctors = con.prepareStatement(
                      "CREATE TABLE proyecto.doctors (" +
-"                       id int NOT NULL AUTO_INCREMENT," +
-"                       cedula varchar(45) NOT NULL," +
+"                       id varchar(45) NOT NULL," +
 "                       name varchar(45)," +
 "                       password varchar(45)," +
 "                       PRIMARY KEY (id)" +
 ");         ");
             stmtDoctors.executeUpdate();
+        
+        } catch (SQLException ex) {
+            System.out.print("Unable to connect");
+            System.out.println("SQLException: " + ex.getMessage());
+        }
+        
+    }
+    private void createPatientsTable(){
+        try {                      
 
-            return true;
+            PreparedStatement stmtPatients;
+
+            stmtPatients = con.prepareStatement(
+                    "CREATE TABLE proyecto.patients("
+                            + "id VARCHAR(45) NOT NULL, "
+                            + "name varchar (45), "
+                            + "password VARCHAR(45),"
+                            +"PRIMARY KEY (id)" +");");
+            stmtPatients.executeUpdate();
 
         } catch (SQLException ex) {
             System.out.print("Unable to connect");
             System.out.println("SQLException: " + ex.getMessage());
-            return false;
         }
+        
     }
     
     

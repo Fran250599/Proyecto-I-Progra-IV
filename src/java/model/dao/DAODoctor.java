@@ -11,14 +11,10 @@ import model.Doctor;
 
 
 public class DAODoctor {
-
-  
-    
-    
     
     public static void addDoctor(Connection con, String id, String name, String password) {
         try {
-            PreparedStatement stmt = con.prepareStatement("INSERT INTO proyecto.doctors (cedula, name, password) VALUES ('" +id +"','" + name +"','" + password + "');");
+            PreparedStatement stmt = con.prepareStatement("INSERT INTO proyecto.doctors (id, name, password) VALUES ('" +id +"','" + name +"','" + password + "');");
 
             int status = stmt.executeUpdate();
             if (status != 0) {
@@ -42,9 +38,9 @@ public class DAODoctor {
         
         while(result.next()){
             
-            d.setId(result.getString(2));
-            d.setName(result.getString(3));
-            d.setPassword(result.getString(4));
+            d.setId(result.getString(1));
+            d.setName(result.getString(2));
+            d.setPassword(result.getString(3));
             
             doctors.add(d);
         }
