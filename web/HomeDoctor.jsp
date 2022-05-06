@@ -35,7 +35,7 @@
                 </li>
 
                 <li>
-                    <a href="#">
+                    <a href="cita">
                         <i class="fas fa-envelope"></i>
                         <span class="nav-item">Gestion Citas</span>
                     </a>    

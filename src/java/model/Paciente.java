@@ -12,8 +12,4 @@ public class Paciente extends Usuario
         this.password = password;
     }
 
-    private String id;
-    private String name;
-    private String password;
-
 }

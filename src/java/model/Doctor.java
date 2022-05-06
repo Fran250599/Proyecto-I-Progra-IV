@@ -15,19 +15,16 @@ public class Doctor extends Usuario {
         
     }
     
-    
-    private String id;
-    private String name;
-    private String password;
-
-    DoctorInfo info;
-
-    public DoctorInfo getInfo() {
+      public DoctorInfo getInfo() {
         return info;
     }
 
     public void setInfo(DoctorInfo info) {
         this.info = info;
     }
-    
+
+
+
+    DoctorInfo info;
+
 }

@@ -25,6 +25,14 @@
         <url-pattern>/userSelection</url-pattern>
     </servlet-mapping>
     <servlet>
+        <servlet-name>cita</servlet-name>
+        <servlet-class>view.CitaServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>cita</servlet-name>
+        <url-pattern>/cita</url-pattern>
+    </servlet-mapping>
+    <servlet>
         <servlet-name>profile</servlet-name>
         <servlet-class>view.Profile</servlet-class>
     </servlet>

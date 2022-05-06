@@ -18,6 +18,8 @@
     <body>
     
     <nav>
+        
+        
         <ul>
             <br>
             <li>
@@ -35,10 +37,15 @@
             </li>
 
             <li>
-                <a href="#">
+                <form action="cita">
+            
+                    <a href="cita">
                     <i class="fas fa-envelope"></i>
                     <span class="nav-item">Agendar Citas</span>
-                </a>    
+                </a> 
+            
+                </form>
+                   
             </li>
 
             <li>
