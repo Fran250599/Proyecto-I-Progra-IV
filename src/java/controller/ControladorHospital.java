@@ -20,18 +20,7 @@ public class ControladorHospital {
         if (usuarios.isEmpty()) {
             ControladorUsuario.getInstance(con).agregarUsuario(usuario);
             usuarios.add(usuario);
-        } else {
-            for (Usuario u : usuarios) {
-
-                if (u.getId() != usuario.getId()) {
-
-                    ControladorUsuario.getInstance(con).agregarUsuario(usuario);
-                    if (u.getName() != usuario.getName()) {
-                        usuarios.add(usuario);
-                    }
-                }
-            }
-        }
+        } 
 
         if (usuario instanceof Doctor) {
             ControladorDoctor.getInstance(this.con).agregarDoctor((Doctor) usuario);
@@ -86,6 +75,8 @@ public class ControladorHospital {
                 }
             }
         } else if (usuario instanceof Administrador) {
+        }else{
+            this.usuarioActivo = null;
         }
         return false;
     }
@@ -106,7 +97,6 @@ public class ControladorHospital {
     public void init(Connection con) throws SQLException{
         this.hospital = new Hospital(con);
         this.con = con;
-        this.usuarioActivo = null;
     }
 
     

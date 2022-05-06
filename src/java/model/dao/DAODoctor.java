@@ -8,7 +8,6 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import model.Doctor;
-import model.Usuario;
 
 
 public class DAODoctor {

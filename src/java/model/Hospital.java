@@ -15,7 +15,6 @@ public final class Hospital {
         this.pacientes = DAOPaciente.getPacientes(con);
         this.administradores = new ArrayList();
         this.usuarios = DAOUsuario.getUsuarios(con);
-        this.usuarioActivo = null;
     }
     
     
@@ -52,7 +51,6 @@ public final class Hospital {
         this.administradores = administradores;
     }
 
-    private Usuario usuarioActivo;
     private ArrayList<Usuario> usuarios;
     private ArrayList<Doctor> doctores;
     private ArrayList<Paciente> pacientes;

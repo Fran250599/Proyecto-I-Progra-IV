@@ -13,7 +13,6 @@ import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import model.Doctor;
-import model.Hospital;
 import model.Paciente;
 import model.Usuario;
 
@@ -29,9 +28,9 @@ public class Registration extends HttpServlet {
 
             DatabaseConnection db = new DatabaseConnection();
             Connection con = db.getConnection();
+            ControladorHospital.getInstance(con).init(con);
             
-            ControladorHospital instance = ControladorHospital.getInstance(con);
-            Hospital h = ControladorHospital.getInstance(con).getHospital();
+       
 
             if (ControladorHospital.getInstance(con).getUsuarioActivo() != null) {
 
@@ -80,7 +79,7 @@ public class Registration extends HttpServlet {
                     }
 
                 }
-
+                
             }
 
             if (validation == false) {
