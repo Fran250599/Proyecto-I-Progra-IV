@@ -11,12 +11,8 @@ import model.Usuario;
 
 public class ControladorHospital {
 
-    public ControladorHospital(Connection con) {
-        this.usuarioActivo = null;
-        this.hospital = new Hospital();
-        this.con = con;
-    }
 
+    
     public void nuevoUsuario(Usuario usuario) {
 
         ArrayList<Usuario> usuarios = hospital.getUsuarios();
@@ -59,11 +55,10 @@ public class ControladorHospital {
     public boolean setUsuarioActivo(Usuario usuario) throws SQLException {
 
          if (usuario instanceof Doctor) {
-            ArrayList<Doctor> doctores = ControladorDoctor.getInstance(this.con).getDoctors();
-
+            ArrayList<Doctor> doctores = hospital.getDoctores();
             for (Doctor d : doctores) {
                 String id1 = d.getId();
-                String id2 = ((Doctor) usuario).getPassword();
+                String id2 = ((Doctor) usuario).getId();
 
                 String password1 = d.getPassword();
                 String password2 = ((Doctor) usuario).getPassword();
@@ -75,8 +70,7 @@ public class ControladorHospital {
                 }
             }
         } else if (usuario instanceof Paciente) {
-            ArrayList<Paciente> pacientes = ControladorPaciente.getInstance(this.con).getPacientes();
-
+            ArrayList<Paciente> pacientes = hospital.getPacientes();
             for (Paciente p : pacientes) {
                 String id1 = p.getId();
                 String id2 = ((Paciente) usuario).getId();
@@ -101,15 +95,33 @@ public class ControladorHospital {
         return this.usuarioActivo;
     }
 
-    public static ControladorHospital getInstance(Connection con) {
-        if (instance != null) {
-            return instance;
-        } else {
-            return new ControladorHospital(con);
-        }
+    
+
+    public Hospital getHospital() {
+        return hospital;
     }
 
-    private final Connection con;
+
+
+    public void init(Connection con) throws SQLException{
+        this.hospital = new Hospital(con);
+        this.con = con;
+        this.usuarioActivo = null;
+    }
+
+    
+    public static ControladorHospital getInstance(Connection con) throws SQLException {
+        if (instance == null) {
+            
+            
+            return instance = new ControladorHospital();
+            
+        } else {
+            return instance;
+        }
+    }
+    
+    private Connection con;
     private Hospital hospital;
     private Usuario usuarioActivo;
     private static ControladorHospital instance;

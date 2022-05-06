@@ -31,29 +31,24 @@
 
                 <div class="input-field d1">
                     <label for="bio">Biografia</label>
-                    <textarea id="bio" rows="4" cols="50"></textarea>
+                    <textarea id="bio" rows="4" cols="50" name="bio"></textarea>
                 </div>
 
-               
-                <div class="input-field">
-                    <label for="name">Nombre </label>
-                    <input type="text" id="name">
-                </div>
-
+           
                 <div class="input-field">
                     <label for="specialty" >Especialidad </label>
-                    <input type="text" id="specialty">
+                    <input type="text" id="specialty" name="speciality">
                 </div>
 
                 <div class="input-field">
                     <label for="price" >Costo</label>
-                    <input type="number" id="price">
+                    <input type="number" id="price" name="cost">
                 </div>
 
             
                 <div class="input-field">
                     <label for="frequency ">Frecuencia</label>
-                    <input type="number" id="frequency">
+                    <input type="number" id="frequency" name="frecuency">
                 </div>
 
                 <input type="submit" class="btn solid" value="Aceptar">

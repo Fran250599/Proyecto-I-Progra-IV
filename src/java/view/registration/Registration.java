@@ -13,6 +13,7 @@ import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import model.Doctor;
+import model.Hospital;
 import model.Paciente;
 import model.Usuario;
 
@@ -28,39 +29,56 @@ public class Registration extends HttpServlet {
 
             DatabaseConnection db = new DatabaseConnection();
             Connection con = db.getConnection();
+            
+            ControladorHospital instance = ControladorHospital.getInstance(con);
+            Hospital h = ControladorHospital.getInstance(con).getHospital();
 
-            String password = req.getParameter("password");
-            String passwordConfirm = req.getParameter("passwordConfirm");
+            if (ControladorHospital.getInstance(con).getUsuarioActivo() != null) {
 
-            if (password.equals(passwordConfirm)) {
-                String nombre = req.getParameter("nombre");
-                String id = req.getParameter("id");
+                validation = true;
 
-                String selection = req.getParameter("typeOfUser");
+                out.print("<html><head><link rel=\"stylesheet\" href=\"SignIn.css\"></head>");
 
-                if ("Doctor".equals(selection)) {
+                resp.sendRedirect("/Servlet-uno/Profile.jsp");
 
-                    Usuario doctor = new Doctor(id, nombre, password);
-                    ControladorHospital.getInstance(con).nuevoUsuario(doctor);
+                out.print("</html>");
 
-                    ControladorHospital.getInstance(con).setUsuarioActivo(doctor);
+            } else {
 
-                    out.print("<html><head><link rel=\"stylesheet\" href=\"SignIn.css\"></head>");
-                    resp.sendRedirect("/Servlet-uno/Profile.jsp");
-                    out.print("</html>");
+                String password = req.getParameter("password");
+                String passwordConfirm = req.getParameter("passwordConfirm");
 
-                    validation = true;
-                } else {
-                    Usuario paciente = new Paciente(id, nombre, password);
-                    ControladorHospital.getInstance(con).nuevoUsuario(paciente);
+                if (password.equals(passwordConfirm)) {
+                    String nombre = req.getParameter("nombre");
+                    String id = req.getParameter("id");
 
-                    ControladorHospital.getInstance(con).setUsuarioActivo(paciente);
+                    String selection = req.getParameter("typeOfUser");
 
-                    out.print("<html><head><link rel=\"stylesheet\" href=\"SignIn.css\"></head>");
-                    resp.sendRedirect("/Servlet-uno/HomePatient.jsp");
-                    out.print("</html>");
+                    if ("Doctor".equals(selection)) {
 
-                    validation = true;
+                        Usuario doctor = new Doctor(id, nombre, password);
+                        ControladorHospital.getInstance(con).nuevoUsuario(doctor);
+
+                        ControladorHospital.getInstance(con).setUsuarioActivo(doctor);
+
+                        out.print("<html><head><link rel=\"stylesheet\" href=\"SignIn.css\"></head>");
+                        resp.sendRedirect("/Servlet-uno/Profile.jsp");
+                        out.print("</html>");
+
+                        validation = true;
+                    } else {
+                        Usuario paciente = new Paciente(id, nombre, password);
+                        ControladorHospital.getInstance(con).nuevoUsuario(paciente);
+
+                        ControladorHospital.getInstance(con).setUsuarioActivo(paciente);
+
+                        out.print("<html><head><link rel=\"stylesheet\" href=\"SignIn.css\"></head>");
+                        resp.sendRedirect("/Servlet-uno/HomePatient.jsp");
+                        out.print("</html>");
+
+                        validation = true;
+                    }
+
                 }
 
             }

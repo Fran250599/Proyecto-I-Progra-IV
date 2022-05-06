@@ -22,13 +22,25 @@ public class Home extends HttpServlet {
     public void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
 
         try {
+            
+            
 
             PrintWriter out = resp.getWriter();
             DatabaseConnection db = new DatabaseConnection();
             Connection con = db.getConnection();
+            
+            ControladorHospital controlador = ControladorHospital.getInstance(con);
+            ControladorHospital.getInstance(con).init(con);
+            
 
-            ArrayList<Doctor> doctors = ControladorHospital.getInstance(con).getDoctores();
-            ArrayList<Paciente> pacientes = ControladorPaciente.getInstance(con).getPacientes();
+            ArrayList<Doctor> doctors = controlador.getDoctores();
+            ArrayList<Paciente> pacientes = controlador.getPacientes();
+            
+            
+            ControladorHospital.getInstance(con);
+            
+            
+            ControladorHospital.getInstance(con);
 
             boolean loginSuccessful = false;
 

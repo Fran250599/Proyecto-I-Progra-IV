@@ -44,7 +44,7 @@
                     </div>
                     
                     <div>
-                        <label for="dog-names">Tipo de usuario:</label>
+                        <label>Tipo de usuario:</label>
                         <select  name="typeOfUser">
                             <option value="Doctor">Doctor</option>
                             <option value="Paciente">Paciente</option>

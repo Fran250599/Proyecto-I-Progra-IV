@@ -1,16 +1,23 @@
 package model;
 
+import java.sql.Connection;
+import java.sql.SQLException;
 import java.util.ArrayList;
+import model.dao.DAODoctor;
+import model.dao.DAOPaciente;
+import model.dao.DAOUsuario;
 
 
-public class Hospital {
+public final class Hospital {
 
-    public Hospital(){
-        this.doctores = new ArrayList();
-        this.pacientes = new ArrayList();
+    public Hospital(Connection con) throws SQLException{
+        this.doctores = DAODoctor.getDoctors(con);
+        this.pacientes = DAOPaciente.getPacientes(con);
         this.administradores = new ArrayList();
-        this.usuarios = new ArrayList();
+        this.usuarios = DAOUsuario.getUsuarios(con);
+        this.usuarioActivo = null;
     }
+    
     
     
     public ArrayList<Doctor> getDoctores() {
@@ -45,6 +52,7 @@ public class Hospital {
         this.administradores = administradores;
     }
 
+    private Usuario usuarioActivo;
     private ArrayList<Usuario> usuarios;
     private ArrayList<Doctor> doctores;
     private ArrayList<Paciente> pacientes;

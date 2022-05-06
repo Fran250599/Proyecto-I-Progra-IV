@@ -1,6 +1,8 @@
 
 package model;
 
+import model.info.DoctorInfo;
+
 
 public class Doctor extends Usuario {
 
@@ -18,4 +20,14 @@ public class Doctor extends Usuario {
     private String name;
     private String password;
 
+    DoctorInfo info;
+
+    public DoctorInfo getInfo() {
+        return info;
+    }
+
+    public void setInfo(DoctorInfo info) {
+        this.info = info;
+    }
+    
 }

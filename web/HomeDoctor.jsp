@@ -28,7 +28,7 @@
                 </li>
 
                 <li>
-                    <a href="profile">
+                    <a href="userSelection">
                         <i class="fas fa-user"></i>
                         <span class="nav-item">Perfil</span>
                     </a>    

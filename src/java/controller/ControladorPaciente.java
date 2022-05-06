@@ -12,7 +12,7 @@ import model.dao.DAOPaciente;
 
 
 public class ControladorPaciente {
-    public ControladorPaciente(Connection con){
+    private ControladorPaciente(Connection con){
         this.con = con;
     }
     

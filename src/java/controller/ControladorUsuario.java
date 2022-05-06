@@ -16,7 +16,7 @@ import model.dao.DAOUsuario;
  */
 public class ControladorUsuario {
     
-    public ControladorUsuario(Connection con){
+    private ControladorUsuario(Connection con){
         this.con = con;
     }
     

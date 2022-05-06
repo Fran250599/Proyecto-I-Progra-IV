@@ -8,7 +8,7 @@ import model.dao.DAODoctor;
 
 public class ControladorDoctor {
     
-    public ControladorDoctor(Connection con){
+    private ControladorDoctor(Connection con){
         this.con = con;
     }
     
