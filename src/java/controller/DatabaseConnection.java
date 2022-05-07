@@ -41,6 +41,12 @@ public class DatabaseConnection {
 "                       id varchar(45) NOT NULL," +
 "                       name varchar(45)," +
 "                       password varchar(45)," +
+"                       especialidad varchar(45)," +
+"                       costo varchar(45)," +
+"                       ubicacion varchar(45)," +
+"                       horario varchar(45)," +
+"                       frecuencia varchar(45)," +     
+"                       bio varchar(200)," +                             
 "                       PRIMARY KEY (id)" +
 ");         ");
             stmtDoctors.executeUpdate();

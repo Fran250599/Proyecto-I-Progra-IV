@@ -47,8 +47,8 @@
 
             
                 <div class="input-field">
-                    <label for="frequency ">Frecuencia</label>
-                    <input type="number" id="frequency" name="frecuency">
+                    <label for="frequency ">Ubicacion</label>
+                    <input type="text" id="ubicacion" name="ubication">
                 </div>
 
                 <input type="submit" class="btn solid" value="Aceptar">

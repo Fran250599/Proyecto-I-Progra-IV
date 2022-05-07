@@ -30,6 +30,10 @@ public class ControladorDoctor {
         return DAODoctor.getDoctors(con);
     }
     
+    public void updateDoctor(Doctor d) throws SQLException{
+        DAODoctor.actualizarDoctor(con, d);
+    }
+    
     private final Connection con;
     private static ControladorDoctor instance;
 }

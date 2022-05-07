@@ -54,8 +54,32 @@ public class DAODoctor {
         
     }
     
-    
-    
+    public static void actualizarDoctor(Connection con, Doctor d) throws SQLException{
+        try{
+        PreparedStatement stmt = con.prepareStatement("UPDATE proyecto.doctors SET "+
+                "especialidad = '" + d.getEspecialidad() + "'," +
+                "costo = '" + d.getCostoConsulta() + "'," +
+                "ubicacion = '" + d.getUbicacion() + "'," +
+                "horario = '" + d.getHorario() + "'," +
+                "frecuencia = '" + d.getFrecuencia() + "'," +
+                "bio = '" + d.getBio() + "'" +
+                "where id =" + d.getId()
+        );
+        
+        
+        int status = stmt.executeUpdate();
+            if (status != 0) {
+                System.out.println("Successfully updated");
+            }
+
+        } catch (SQLException ex) {
+
+            System.out.println("SQLException: " + ex.getMessage());
+            System.out.println("SQLState: " + ex.getSQLState());
+            System.out.println("VendorError: " + ex.getErrorCode());
+        }          
+    }
+
 }
 
 
