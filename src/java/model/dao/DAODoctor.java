@@ -35,7 +35,7 @@ public class DAODoctor {
 
         
         ArrayList<Doctor> doctors = new ArrayList<>();
-        
+        //String name, String id, String password, String especialidad, String costoConsulta, String ubicacion, String horario, String frecuencia, String bio
         while(result.next()){
             
             String id = result.getString(1);
@@ -48,7 +48,7 @@ public class DAODoctor {
             String frecuencia = result.getString(8);
             String bio = result.getString(9);
             
-            Doctor d = new Doctor(id, name,password, especialidad, costo, ubicacion, horario, frecuencia, bio);
+            Doctor d = new Doctor(name, id,password, especialidad, costo, ubicacion, horario, frecuencia, bio);
             
             doctors.add((Doctor) d);
         }
@@ -57,6 +57,7 @@ public class DAODoctor {
         return doctors;
         
     }
+    
     
     public static void actualizarDoctor(Connection con, Doctor d) throws SQLException{
         try{

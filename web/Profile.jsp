@@ -35,8 +35,10 @@
                     <textarea id="bio" rows="4" cols="50" name="bio">                       
                         <%
                             Doctor d = (Doctor) request.getAttribute("doctor");
+                         
+                                out.print(d.getBio());
                             
-                            out.print(d.getBio());
+                            
 
                         %>
                     </textarea>

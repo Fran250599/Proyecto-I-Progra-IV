@@ -20,38 +20,7 @@ public class Doctor extends Usuario {
         this.name = name;
         this.id = id;
         this.password = password;
-        
-        if(especialidad==null){
-            this.especialidad ="";
-        }else{
-            this.especialidad = especialidad;
-        }
-        if(costoConsulta == null){
-            this.costoConsulta = "";
-        }else{
-            this.costoConsulta = costoConsulta;
-        }
-        if(ubicacion == null){
-            this.ubicacion ="";
-        }else{
-             this.ubicacion = ubicacion;
-        }
-        if(frecuencia == null){
-            this.frecuencia ="";
-        }else{
-             this.frecuencia = frecuencia;
-        }
-        if(horario == null){
-            this.horario ="";
-        }else{
-             this.horario = horario;
-        }
-        if(bio == null){
-            this.bio ="";
-        }else{
-             this.bio = bio;
-        }    
-        
+
     }
 
     public String getName() {
