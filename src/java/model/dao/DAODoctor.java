@@ -50,8 +50,6 @@ public class DAODoctor {
             
             Doctor d = new Doctor(id, name,password, especialidad, costo, ubicacion, horario, frecuencia, bio);
             
-            d.setId(id);
-            
             doctors.add((Doctor) d);
         }
         

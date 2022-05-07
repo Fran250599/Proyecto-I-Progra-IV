@@ -12,19 +12,46 @@ public class Doctor extends Usuario {
         this.password = password;
         this.name= name;
         
+        
     }
 
-    public Doctor(String name, String id, String password, String espcialidad, String costoConsulta, String ubicacion, String horario, String frecuencia, String bio) {
+    public Doctor(String name, String id, String password, String especialidad, String costoConsulta, String ubicacion, String horario, String frecuencia, String bio) {
         super(id, name, password);
         this.name = name;
         this.id = id;
         this.password = password;
-        this.especialidad = espcialidad;
-        this.costoConsulta = costoConsulta;
-        this.ubicacion = ubicacion;
-        this.horario = horario;
-        this.frecuencia = frecuencia;
-        this.bio = bio;
+        
+        if(especialidad==null){
+            this.especialidad ="";
+        }else{
+            this.especialidad = especialidad;
+        }
+        if(costoConsulta == null){
+            this.costoConsulta = "";
+        }else{
+            this.costoConsulta = costoConsulta;
+        }
+        if(ubicacion == null){
+            this.ubicacion ="";
+        }else{
+             this.ubicacion = ubicacion;
+        }
+        if(frecuencia == null){
+            this.frecuencia ="";
+        }else{
+             this.frecuencia = frecuencia;
+        }
+        if(horario == null){
+            this.horario ="";
+        }else{
+             this.horario = horario;
+        }
+        if(bio == null){
+            this.bio ="";
+        }else{
+             this.bio = bio;
+        }    
+        
     }
 
     public String getName() {

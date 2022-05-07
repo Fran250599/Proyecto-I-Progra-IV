@@ -4,6 +4,7 @@
     Author     : XPC
 --%>
 
+<%@page import="model.Doctor"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -31,24 +32,37 @@
 
                 <div class="input-field d1">
                     <label for="bio">Biografia</label>
-                    <textarea id="bio" rows="4" cols="50" name="bio"></textarea>
+                    <textarea id="bio" rows="4" cols="50" name="bio">                       
+                        <%
+                            Doctor d = (Doctor) request.getAttribute("doctor");
+                            
+                            out.print(d.getBio());
+
+                        %>
+                    </textarea>
                 </div>
 
            
                 <div class="input-field">
                     <label for="specialty" >Especialidad </label>
-                    <input type="text" id="specialty" name="speciality">
+                    <input type="text" id="specialty" name="speciality" value="<%
+                           out.print(d.getFrecuencia());
+                           %>">
                 </div>
 
                 <div class="input-field">
                     <label for="price" >Costo</label>
-                    <input type="number" id="price" name="cost">
+                    <input type="number" id="price" name="cost" value="<%
+                           out.print(d.getCostoConsulta());
+                           %>">
                 </div>
 
             
                 <div class="input-field">
                     <label for="frequency ">Ubicacion</label>
-                    <input type="text" id="ubicacion" name="ubication">
+                    <input type="text" id="ubicacion" name="ubication" value="<%
+                           out.print(d.getUbicacion());
+                           %>">
                 </div>
 
                 <input type="submit" class="btn solid" value="Aceptar">

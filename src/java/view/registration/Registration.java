@@ -36,13 +36,12 @@ public class Registration extends HttpServlet {
 
                 validation = true;
                 
-                Doctor d = (Doctor) ControladorHospital.getInstance(con).getUsuarioActivo(); 
-
-                out.print("<html><head><link rel=\"stylesheet\" href=\"SignIn.css\"></head>");
-
-                resp.sendRedirect("/Servlet-uno/Profile.jsp");
-
-                out.print("</html>");
+                Doctor d = (Doctor) ControladorHospital.getInstance(con).getUsuarioActivo();
+                
+                
+                req.setAttribute("doctor", d);
+                getServletConfig().getServletContext().getRequestDispatcher("/Profile.jsp").forward(req,resp);
+              
 
             } else {
 
