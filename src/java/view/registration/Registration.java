@@ -35,6 +35,8 @@ public class Registration extends HttpServlet {
             if (ControladorHospital.getInstance(con).getUsuarioActivo() != null) {
 
                 validation = true;
+                
+                Doctor d = (Doctor) ControladorHospital.getInstance(con).getUsuarioActivo(); 
 
                 out.print("<html><head><link rel=\"stylesheet\" href=\"SignIn.css\"></head>");
 

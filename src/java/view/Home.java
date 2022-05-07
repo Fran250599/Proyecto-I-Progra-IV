@@ -54,6 +54,7 @@ public class Home extends HttpServlet {
                                 
                                 Usuario doctor = d;
                                 ControladorHospital.getInstance(con).setUsuarioActivo(doctor);
+                                return;
                             }
                         }
                     }
@@ -81,7 +82,7 @@ public class Home extends HttpServlet {
                                 paciente.setPassword(password);
                                 
                                 ControladorHospital.getInstance(con).setUsuarioActivo(paciente);
-
+                                return;
                             }
                         }
                     }

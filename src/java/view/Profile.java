@@ -6,6 +6,7 @@ import controller.DatabaseConnection;
 import jakarta.servlet.http.*;
 import jakarta.servlet.*;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.logging.Level;
@@ -45,32 +46,18 @@ public class Profile extends HttpServlet{
                 d.setFrecuencia(frecuencia);
                 
                 ControladorDoctor.getInstance(con).updateDoctor(d);
-        
-        
-        
                 
+                PrintWriter out = resp.getWriter();
                 
-                
+                out.print("<html><head><link rel=\"stylesheet\" href=\"SignIn.css\"></head>");
+        
+                resp.sendRedirect("/Servlet-uno/HomeDoctor.jsp");
+        
+                out.print("</html>");
                 
             }
             
-            
-            
-            
-            
-            
-            
-            
-            
-            /*
-            
-            PrintWriter out = resp.getWriter();
-            
-            out.print("<html><head><link rel=\"stylesheet\" href=\"Profile.css\"></head>");
-            
-            resp.sendRedirect("/Servlet-uno/HomeDoctor.jsp");
-            
-            out.print("</html>");*/
+
         } catch (SQLException ex) {
             Logger.getLogger(Profile.class.getName()).log(Level.SEVERE, null, ex);
         }

@@ -41,8 +41,14 @@ public class DAODoctor {
             String id = result.getString(1);
             String name = result.getString(2);
             String password = result.getString(3);
+            String especialidad = result.getString(4);
+            String costo = result.getString(5);
+            String ubicacion = result.getString(6);
+            String horario = result.getString(7);
+            String frecuencia = result.getString(8);
+            String bio = result.getString(9);
             
-            Doctor d = new Doctor(id, name,password);
+            Doctor d = new Doctor(id, name,password, especialidad, costo, ubicacion, horario, frecuencia, bio);
             
             d.setId(id);
             
