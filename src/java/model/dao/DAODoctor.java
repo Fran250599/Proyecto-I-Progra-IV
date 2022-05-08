@@ -84,6 +84,8 @@ public class DAODoctor {
             System.out.println("VendorError: " + ex.getErrorCode());
         }          
     }
+    
+   
 
 }
 

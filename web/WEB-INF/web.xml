@@ -25,6 +25,10 @@
         <servlet-name>doctors</servlet-name>
         <url-pattern>/doctors</url-pattern>
     </servlet-mapping>
+        
+       
+    
+    
     
     <servlet>
         <servlet-name>userSelection</servlet-name>

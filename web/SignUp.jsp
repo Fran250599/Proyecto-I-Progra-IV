@@ -53,9 +53,7 @@
                         
                     </div>
 
-                    <div class="link">
-                        <a href="home">Registrarme mas tarde</a>
-                       </div>
+
 
                    <input type="submit" class="btn solid" value="Registrarme">
                     

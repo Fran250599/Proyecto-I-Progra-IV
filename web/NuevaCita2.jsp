@@ -65,12 +65,12 @@
 
                     <div class="input-field input-schedule">
                         <label for="name">Fecha:</label>
-                        <input type="date" id="name">
+                        <input type="date" id="date" name="date">
                     </div>
 
                     <div class="input-field input-schedule">
                         <label for="name">Hora:</label>
-                        <input type="time" id="name">
+                        <input type="time" id="time" name="time">
                     </div>
 
                     <div class="input-field input-schedule">

@@ -1,6 +1,4 @@
 
-package view;
-
 import controller.ControladorHospital;
 import controller.DatabaseConnection;
 import jakarta.servlet.ServletException;
@@ -14,10 +12,11 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import model.Cita;
 import model.Doctor;
 
 
-public class ListarDoctores extends HttpServlet{
+public class CitasActivas extends HttpServlet{
     
     @Override
     public void doGet(HttpServletRequest req, HttpServletResponse resp)throws ServletException, IOException{
@@ -28,33 +27,16 @@ public class ListarDoctores extends HttpServlet{
             Connection con = db.getConnection();
             
         try {
-            ArrayList<Doctor> doctors = ControladorHospital.getInstance(con).getDoctores();
-            
-            ArrayList<Doctor> doctorsInfo = new ArrayList();
-            
-            for(Doctor d : doctors){
-                
-                if(!d.getEspecialidad().equals(" ")){
-                    if(!d.getUbicacion().equals(" ")){
-                        
-                        
-                        doctorsInfo.add(d);
-                        
-                    }
-                }
-                
-            }
-            
-            
-            req.setAttribute("doctorsInfo", doctorsInfo);
-            getServletConfig().getServletContext().getRequestDispatcher("/Doctors.jsp").forward(req,resp);
-
-            
+            ControladorHospital.getInstance(con).setUsuarioActivo(null);
         } catch (SQLException ex) {
-            Logger.getLogger(ListarDoctores.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(CitasActivas.class.getName()).log(Level.SEVERE, null, ex);
         }
 
-   
+        out.print("<html><head><link rel=\"stylesheet\" href=\"SignIn.css\"></head>");
+        
+        resp.sendRedirect("/Servlet-uno/index.jsp");
+        
+        out.print("</html>");
       
     }
     

@@ -45,7 +45,7 @@ public class Cita {
         this.hora = hora;
     }
 
-    public boolean isEstado() {
+    public boolean getEstado() {
         return estado;
     }
 
