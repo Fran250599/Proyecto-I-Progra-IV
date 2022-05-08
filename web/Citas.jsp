@@ -15,8 +15,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Home</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous"/>
-        <link rel="stylesheet" href="/Home/Home.css">
-        <link rel="stylesheet" href="Doctor.css">
+        <link rel="stylesheet" href="css/Home.css">
+        <link rel="stylesheet" href="css/Doctor.css">
     </head>
     <body>
 
@@ -31,7 +31,7 @@
                 </li>
 
                 <li>
-                    <a href="profile">
+                    <a href="userSelection">
                         <i class="fas fa-user"></i>
                         <span class="nav-item">Perfil</span>
                     </a>    
@@ -45,7 +45,7 @@
                 </li>
 
                 <li>
-                    <a href="login" class="logout">
+                    <a href="login" class="login">
                         <i class="fas fa-sign-out-alt"></i>
                         <span class="nav-item">Cerrar Sesión</span>
                     </a>    
@@ -60,10 +60,11 @@
                 <br><br>
                 <h1 class="txt-1">Gestion de citas agendadas</h1>
                 <h2 class="txt-2">Estado de la cita</h2>
+                <h3 class="txt-2">Muestra como se veria, no esta funcionando por completo</h3>
             </div>
 
         </div>
-        <form action="citas">
+        <form action="home">
             <div>
                 <div class="tabla-doctor">
                     <table class="content-table">
@@ -79,46 +80,8 @@
                         </thead>
 
                         <tbody>
+   
                             
-                            
-                            <%
-                                ArrayList<Cita> citas = (ArrayList<Cita>) request.getAttribute("citas");
-                                
-                                for(Cita c : citas){
-                                
-                                    out.print("<tr>");
-                                        out.print("<td>");
-                                        
-                                            out.print(c.getPacienteName());
-                                        
-                                        out.print("</td>");
-                                        out.print("<td>");
-                                        
-                                            out.print(c.getFecha());
-                                        
-                                        out.print("</td>");
-                                        out.print("<td>");
-                                        
-                                            out.print(c.getHora());
-                                        
-                                        out.print("</td>");
-                                        out.print("<td>");
-                                        
-                                            out.print(c.getEstado());
-                                        
-                                        out.print("</td>");
-                                
-                                    out.print("</tr>");
-                                }
-                            
-                            %>
-                            
-                            
-                            
-                            
-                            
-                            
-                            <!--
                             <tr>
                                 <td>Paciente 1</td>
                                 <td>05/05/2022</td>
@@ -130,7 +93,7 @@
                                 </td>
                                 <th><textarea id="bio" rows="4" cols="50"></textarea></th>
 
-                            </tr>-->
+                            </tr>
                         </tbody>
                     </table>
 

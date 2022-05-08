@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="css/Home.css">
 </head>
 <body>
-    
+
     <nav>
         <ul>
             <br>
@@ -24,28 +24,28 @@
                 <a href="home">
                     <i class="fas fa-home"></i>
                     <span class="nav-item">Pagina Principal</span>
-                </a>    
+                </a>
             </li>
 
             <li>
                 <a href="userSelection">
                     <i class="fas fa-user"></i>
                     <span class="nav-item">Perfil</span>
-                </a>    
+                </a>
             </li>
 
             <li>
-                <a href="citasActivas">
+                <a href="CitaActiva">
                     <i class="fas fa-envelope"></i>
                     <span class="nav-item">Gestion Citas</span>
-                </a>    
+                </a>
             </li>
 
             <li>
                 <a href="login" class="logout">
                     <i class="fas fa-sign-out-alt"></i>
                     <span class="nav-item">Cerrar Sesión</span>
-                </a>    
+                </a>
             </li>
 
         </ul>

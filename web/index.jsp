@@ -48,14 +48,14 @@
 
                         <div class="content">
                             <h3>¿No tienes una cuenta?</h3>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia deleniti quidem eligendi alias unde aliquam! Temporibus, nihil maxime quasi odit ex voluptatum ut unde cumque itaque rem? Quis, voluptatum culpa.</p>
+                            <p>Create una cuenta para ser atendido y deme un 100 por favor </p>
                             <button class="btn transparent" id="sign-up-button" >Registrarme</button>
                             <p></p>
 
                            
 
                         </div>
-                        <img src="/Pictures/img_01.svg" alt="" class="image">
+                        <img src="Pictures/img_01.svg" alt="" class="image">
 
                     </div>
                 </form>

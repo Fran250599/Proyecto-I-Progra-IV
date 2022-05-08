@@ -71,7 +71,7 @@
                         
                         <div class="panel right-panel">
                             <h3>¿Ya tienes una cuenta?</h3>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia deleniti quidem eligendi alias unde aliquam! Temporibus, nihil maxime quasi odit ex voluptatum ut unde cumque itaque rem? Quis, voluptculpaatum .</p>
+                            <p>Ingrese con su cuenta previamente creada y deme un 100 </p>
                             
                             <a href="login">
                             <button class="btn transparent" id="sign-in-button">Iniciar sesión</button>                                 

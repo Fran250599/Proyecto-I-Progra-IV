@@ -48,7 +48,8 @@ public class Registration extends HttpServlet {
                 String password = req.getParameter("password");
                 String passwordConfirm = req.getParameter("passwordConfirm");
 
-                if (password.equals(passwordConfirm)) {
+                if (password.equals(passwordConfirm) && !password.equals("")&& !req.getParameter("nombre").equals("") && !req.getParameter("id").equals("")) {
+                    
                     String nombre = req.getParameter("nombre");
                     String id = req.getParameter("id");
 
