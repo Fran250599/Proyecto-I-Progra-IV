@@ -11,7 +11,6 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -26,7 +25,6 @@ public class CitaServlet extends HttpServlet{
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException{
         System.out.println("this is a get method");
-        PrintWriter out = response.getWriter();
         
 
    
@@ -36,10 +34,16 @@ public class CitaServlet extends HttpServlet{
         try {
             ArrayList<Doctor> doctors = ControladorHospital.getInstance(con).getDoctores();
             ArrayList<String> names = new ArrayList<>();
-            
+           
             for(Doctor d : doctors){
                 
-                names.add(d.getName());
+                if(!d.getUbicacion().equals(" ")){
+                    if(!d.getCostoConsulta().equals(" ")){
+                        names.add(d.getName());
+                    }
+                }
+                
+                
             }
             
             Paciente paciente = (Paciente) ControladorHospital.getInstance(con).getUsuarioActivo();

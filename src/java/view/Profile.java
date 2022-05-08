@@ -38,7 +38,7 @@ public class Profile extends HttpServlet{
                 String frecuencia = "afaw";
         
                 
-                d.setEspcialidad(especialidad);
+                d.setEspecialidad(especialidad);
                 d.setCostoConsulta(costoConsulta);
                 d.setUbicacion(ubicacion);
                 d.setBio(bio);

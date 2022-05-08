@@ -16,6 +16,16 @@
         <servlet-name>home</servlet-name>
         <url-pattern>/home</url-pattern>
     </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>doctors</servlet-name>
+        <servlet-class>view.ListarDoctores</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>doctors</servlet-name>
+        <url-pattern>/doctors</url-pattern>
+    </servlet-mapping>
+    
     <servlet>
         <servlet-name>userSelection</servlet-name>
         <servlet-class>view.registration.Registration</servlet-class>
@@ -24,6 +34,16 @@
         <servlet-name>userSelection</servlet-name>
         <url-pattern>/userSelection</url-pattern>
     </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>citaAgendada</servlet-name>
+        <servlet-class>view.CitaAgendada</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>citaAgendada</servlet-name>
+        <url-pattern>/citaAgendada</url-pattern>
+    </servlet-mapping>
+    
     <servlet>
         <servlet-name>cita</servlet-name>
         <servlet-class>view.CitaServlet</servlet-class>
@@ -32,6 +52,17 @@
         <servlet-name>cita</servlet-name>
         <url-pattern>/cita</url-pattern>
     </servlet-mapping>
+    
+    
+    <servlet>
+        <servlet-name>citados</servlet-name>
+        <servlet-class>view.CitaServlet2</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>citados</servlet-name>
+        <url-pattern>/citados</url-pattern>
+    </servlet-mapping>
+    
     <servlet>
         <servlet-name>profile</servlet-name>
         <servlet-class>view.Profile</servlet-class>

@@ -34,8 +34,26 @@ public class Home extends HttpServlet {
             ArrayList<Doctor> doctors = controlador.getDoctores();
             ArrayList<Paciente> pacientes = controlador.getPacientes();
             
-
             boolean loginSuccessful = false;
+            if(ControladorHospital.getInstance(con).getUsuarioActivo() != null){ 
+                loginSuccessful = true;
+                
+                Usuario usuarioActivo = ControladorHospital.getInstance(con).getUsuarioActivo();
+                
+                if(usuarioActivo instanceof Doctor){
+                    out.print("<html><head><link rel=\"stylesheet\" href=\"Home.css\"></head>");
+
+                    resp.sendRedirect("/Servlet-uno/HomeDoctor.jsp");
+
+                    out.print("</html>");
+                }else{
+                    out.print("<html><head><link rel=\"stylesheet\" href=\"Home.css\"></head>");
+
+                                resp.sendRedirect("/Servlet-uno/HomePatient.jsp");
+
+                                out.print("</html>");
+                }
+            }else{
 
             if (db.getConnection() != null) {
 
@@ -93,7 +111,9 @@ public class Home extends HttpServlet {
                     resp.sendRedirect("/Servlet-uno/index.jsp");
                     out.print("</html>");
                 }
+                
             }
+        }
 
         } catch (SQLException ex) {
             Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null, ex);

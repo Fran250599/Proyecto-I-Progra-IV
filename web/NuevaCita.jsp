@@ -23,14 +23,14 @@
         <ul>
             <br>
             <li>
-                <a href="#">
+                <a href="home">
                     <i class="fas fa-home"></i>
                     <span class="nav-item">Pagina Principal</span>
                 </a>    
             </li>
 
             <li>
-                <a href="#">
+                <a href="doctors">
                     <i class="fas fa-user"></i>
                     <span class="nav-item">Doctores</span>
                 </a>    
@@ -55,7 +55,7 @@
 
     <div>
 
-       <form action="Schedule2.html">
+       <form action="citados">
         <div>
             <br><br>
             <h1 class="txt-1">Agendar una cita</h1>
@@ -85,7 +85,7 @@
             <div class="input-field input-schedule">
                 <label for="name">Nombre del doctor: </label>
                 
-                <select>
+                <select name="doctorName">
                     <%
                         for(String name : names){
                             out.print("<option>");

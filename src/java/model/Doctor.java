@@ -1,6 +1,8 @@
 
 package model;
 
+import java.util.ArrayList;
+
 
 
 public class Doctor extends Usuario {
@@ -11,15 +13,47 @@ public class Doctor extends Usuario {
         this.id = id;
         this.password = password;
         this.name= name;
+        this.citas = new ArrayList();
         
         
     }
 
-    public Doctor(String name, String id, String password, String especialidad, String costoConsulta, String ubicacion, String horario, String frecuencia, String bio) {
+    public Doctor(String id, String name, String password, String especialidad, String costoConsulta, String ubicacion, String horario, String frecuencia, String bio) {
         super(id, name, password);
         this.name = name;
         this.id = id;
         this.password = password;
+        this.citas = new ArrayList();
+        if(ubicacion == null){
+            this.ubicacion=" ";
+        }else{
+            this.ubicacion = ubicacion;
+        }
+        if(especialidad == null){
+            this.especialidad=" ";
+        }else{
+            this.especialidad = especialidad;
+        }
+        if(costoConsulta == null){
+            this.costoConsulta=" ";
+        }else{
+            this.costoConsulta = costoConsulta;
+        }
+        if(horario == null){
+            this.horario=" ";
+        }else{
+            this.horario = horario;
+        }
+        if(frecuencia == null){
+            this.frecuencia=" ";
+        }else{
+            this.frecuencia = frecuencia;
+        }
+        if(bio == null){
+            this.bio=" ";
+        }else{
+            this.bio = bio;
+        }
 
     }
 
@@ -51,9 +85,6 @@ public class Doctor extends Usuario {
         return especialidad;
     }
 
-    public void setEspcialidad(String espcialidad) {
-        this.especialidad = espcialidad;
-    }
 
     public String getCostoConsulta() {
         return costoConsulta;
@@ -87,6 +118,14 @@ public class Doctor extends Usuario {
         this.frecuencia = frecuencia;
     }
 
+    public void setEspecialidad(String especialidad) {
+        this.especialidad = especialidad;
+    }
+
+    public void setCitas(ArrayList<Cita> citas) {
+        this.citas = citas;
+    }
+
     public String getBio() {
         return bio;
     }
@@ -95,6 +134,12 @@ public class Doctor extends Usuario {
         this.bio = bio;
     }
 
+    public ArrayList<Cita> getCitas() {
+        return citas;
+    }
+
+
+    
     String name;
     String id;
     String password;
@@ -107,6 +152,9 @@ public class Doctor extends Usuario {
     String horario;
     String frecuencia;
     String bio;
+    
+    
+    ArrayList<Cita> citas;
 
 
 

@@ -48,7 +48,7 @@ public class DAODoctor {
             String frecuencia = result.getString(8);
             String bio = result.getString(9);
             
-            Doctor d = new Doctor(name, id,password, especialidad, costo, ubicacion, horario, frecuencia, bio);
+            Doctor d = new Doctor(id,name,password, especialidad, costo, ubicacion, horario, frecuencia, bio);
             
             doctors.add((Doctor) d);
         }
@@ -68,7 +68,7 @@ public class DAODoctor {
                 "horario = '" + d.getHorario() + "'," +
                 "frecuencia = '" + d.getFrecuencia() + "'," +
                 "bio = '" + d.getBio() + "'" +
-                "where id =" + d.getId()
+                "where id = '" + d.getId() + "'"
         );
         
         

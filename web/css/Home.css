@@ -84,3 +84,33 @@ nav:hover{
     position: absolute;
     bottom: 0;
 }
+
+/*------HOME PACIENT----*/
+
+.header-txt-1{
+    z-index: -1;
+    position: relative;
+    text-align: center;
+    color: black;
+    font-weight: 600;
+    font-size: 34px;
+}
+
+.header-txt-2{
+    
+    z-index: -1;
+    position: relative;
+    text-align: center;
+    color: black;
+    font-weight: 300;
+    font-size: 20px;
+}
+
+.header-pic-1{
+    
+    z-index: -1;
+    display:block;
+    margin:auto;
+    max-width:30%;
+    max-height:30%
+}

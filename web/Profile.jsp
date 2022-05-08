@@ -39,7 +39,6 @@
                                 out.print(d.getBio());
                             
                             
-
                         %>
                     </textarea>
                 </div>
@@ -48,7 +47,7 @@
                 <div class="input-field">
                     <label for="specialty" >Especialidad </label>
                     <input type="text" id="specialty" name="speciality" value="<%
-                           out.print(d.getFrecuencia());
+                           out.print(d.getEspecialidad());
                            %>">
                 </div>
 
